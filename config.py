@@ -5,13 +5,12 @@ import os
 load_dotenv()
 
 # Telegram API credentials obtained from https://my.telegram.org/auth
-API_ID = int(os.getenv("API_ID"))  # Your Telegram API ID
-API_HASH = os.getenv("API_HASH")  # Your Telegram API Hash
-
-# List of Telegram bot tokens used for file upload/download operations
-BOT_TOKENS = os.getenv("BOT_TOKENS", "").strip(", ").split(",")
-BOT_TOKENS = [token.strip() for token in BOT_TOKENS if token.strip() != ""]
-
+API_ID=10247139
+API_HASH="96b46175824223a33737657ab943fd6a"
+BOT_TOKENS = os.getenv("BOT_TOKENS", "6417602347:AAELMBu-V_FwqI5fA8v5L3RmRiAVqh70jKQ").strip(", ").split(",")
+BOT_TOKENS = [token.strip() for token in BOT_TOKENS if token.strip() != ""]  # Clean up any extra spaces
+STORAGE_CHANNEL=-1001503950731
+DATABASE_BACKUP_MSG_ID=5
 # List of Premium Telegram Account Pyrogram String Sessions used for file upload/download operations
 STRING_SESSIONS = os.getenv("STRING_SESSIONS", "").strip(", ").split(",")
 STRING_SESSIONS = [
@@ -19,15 +18,13 @@ STRING_SESSIONS = [
 ]
 
 # Chat ID of the Telegram storage channel where files will be stored
-STORAGE_CHANNEL = int(os.getenv("STORAGE_CHANNEL"))  # Your storage channel's chat ID
+
 
 # Message ID of a file in the storage channel used for storing database backups
-DATABASE_BACKUP_MSG_ID = int(
-    os.getenv("DATABASE_BACKUP_MSG_ID")
-)  # Message ID for database backup
+#r database backup
 
 # Password used to access the website's admin panel
-ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "admin")  # Default to "admin" if not set
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "MrBorn2Help")  # Default to "admin" if not set
 
 # Determine the maximum file size (in bytes) allowed for uploading to Telegram
 # 1.98 GB if no premium sessions are provided, otherwise 3.98 GB
